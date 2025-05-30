@@ -1,5 +1,7 @@
 services:
   - type: web
     name: blood-donation-backend
-    runtime: docker
+    env: docker
     plan: free
+    branch: main
+    dockerfilePath: Dockerfile

@@ -1,17 +1,20 @@
-# Use a Java runtime
-FROM openjdk:17-jdk-slim
+# Use an official JDK 21 image
+FROM eclipse-temurin:21-jdk
 
-# Set working directory inside container
+# Set working directory
 WORKDIR /app
 
-# Copy your project files
+# Copy the project files
 COPY . .
 
-# Build the app
+# Make mvnw executable (needed for Render)
+RUN chmod +x mvnw
+
+# Build the Spring Boot project
 RUN ./mvnw clean package -DskipTests
 
-# Expose port (Spring Boot default)
+# Expose port 8080 (Spring Boot default)
 EXPOSE 8080
 
-# Start the application
+# Start the app
 CMD ["java", "-jar", "target/*.jar"]
