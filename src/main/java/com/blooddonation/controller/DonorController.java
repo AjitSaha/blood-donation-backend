@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/donors")
-@CrossOrigin(origins = {"http://localhost:3000", "https://your-frontend-domain.com"})
+@CrossOrigin(origins = {"https://blooddonationfrontend-five.vercel.app"})
 public class DonorController {
     
     private final DonorService donorService;

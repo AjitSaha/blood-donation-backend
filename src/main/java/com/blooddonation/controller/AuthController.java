@@ -13,7 +13,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = {"http://localhost:3000", "https://your-frontend-domain.com"})
+@CrossOrigin(origins = {"https://blooddonationfrontend-five.vercel.app"})
 public class AuthController {
     
     private final UserService userService;
